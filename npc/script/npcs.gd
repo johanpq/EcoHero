@@ -26,16 +26,19 @@ var is_typing := false
 @export var title_mural: RichTextLabel
 @export var text_mural: RichTextLabel
 @export var next_scenario: String
+@export var has_dialog: bool
 
 var player_in_area = false
 var dialogue_index: int = 0
 var dialogue_open: bool = false
 var completed_quest: bool = false
 var _blocked_message_shown: bool = false
+var telp_okay: bool = false
 
 @onready var sprite: AnimatedSprite2D = $Npc/Texture
 
 func _ready() -> void:
+	telp_okay = false
 	if sprite and sprite_frames:
 		sprite.sprite_frames = sprite_frames
 		if sprite_frames.has_animation(animation_name):
@@ -73,6 +76,7 @@ func toggle_dialogue():
 			completed_quest = true
 			title_mural.text = name_npc
 			text_mural.text = "Tarefa concluida! Agora procure " + next_npc
+			telp_okay = true
 
 		# Diálogo normal
 		else:
@@ -127,13 +131,15 @@ func close_label_keyboard():
 	labelKeyboard.visible = false
 
 func in_area(_body: Node2D) -> void:
-	player_in_area = true
-	open_label_keyboard("i")
+	if has_dialog:
+		player_in_area = true
+		open_label_keyboard("i")
 
 func out_area(_body: Node2D) -> void:
-	player_in_area = false
-	close_label_keyboard()
-	_close_dialogue()
+	if has_dialog:		
+		player_in_area = false
+		close_label_keyboard()
+		_close_dialogue()
 
 func next_level():
 	get_tree().change_scene_to_file("res://Scenario/" + next_scenario + ".tscn")
