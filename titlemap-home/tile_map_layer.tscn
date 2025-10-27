@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://d0825uxp8afud"]
 
 [ext_resource type="Texture2D" uid="uid://dvbf73x266lb" path="res://Tiny Swords (Free Pack)/Terrain/Water Background color.png" id="1_wnsyj"]
-[ext_resource type="Texture2D" uid="uid://bwoddvapfngww" path="res://TitleMapLayer/water_and_island_tiles_v2.png" id="4_203dm"]
+[ext_resource type="Texture2D" uid="uid://bwoddvapfngww" path="res://titlemap-home/water_and_island_tiles_v2.png" id="4_203dm"]
 [ext_resource type="Texture2D" uid="uid://cathcyge8b1sg" path="res://Tiny Swords (Free Pack)/Terrain/Tilemap_color1.png" id="4_rio1e"]
 [ext_resource type="PackedScene" uid="uid://77n8rb6c2dva" path="res://water-animation/animated_water_left.tscn" id="6_gyoji"]
 [ext_resource type="PackedScene" uid="uid://7d6oybdjtex4" path="res://water-animation/animated_water_mid_1.tscn" id="7_xnkcv"]

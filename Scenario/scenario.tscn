@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=4 uid="uid://bfl0bwcxhfrci"]
 
-[ext_resource type="PackedScene" uid="uid://d0825uxp8afud" path="res://TitleMapLayer/tile_map_layer.tscn" id="1_iwm72"]
+[ext_resource type="PackedScene" uid="uid://d0825uxp8afud" path="res://titlemap-home/tile_map_layer.tscn" id="1_iwm72"]
 [ext_resource type="PackedScene" uid="uid://k00yvrjm63ux" path="res://npc/npc.tscn" id="2_blswb"]
 [ext_resource type="Texture2D" uid="uid://vh5fwiofp517" path="res://Tiny Swords (Free Pack)/Units/Black Units/Monk/Idle.png" id="3_iwm72"]
 [ext_resource type="PackedScene" uid="uid://c5xviqa6tjxo8" path="res://character/character.tscn" id="4_1eo50"]

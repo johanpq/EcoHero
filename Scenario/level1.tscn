@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://dlth6r7kr30ve"]
+[gd_scene load_steps=3 format=3 uid="uid://dlth6r7kr30ve"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://chrkpvc28a6g3" path="res://Scenario/scenario_level_1.tscn" id="1_l3qga"]
+[ext_resource type="PackedScene" uid="uid://c5xviqa6tjxo8" path="res://character/character.tscn" id="2_5ylps"]
+
+[node name="level1" type="Node2D"]
+
+[node name="scenario-level1" parent="." instance=ExtResource("1_l3qga")]
+
+[node name="Character" parent="." instance=ExtResource("2_5ylps")]
+position = Vector2(106, 92)
+scale = Vector2(0.5, 0.5)
