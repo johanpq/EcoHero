@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0ewkfwtbtf2t"]
+
+[ext_resource type="Texture2D" uid="uid://b8sarpoowjrfq" path="res://Tiny Swords (Free Pack)/Decorations/Bushes/Bushe1.png" id="1_pqglw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dkds"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6sut"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft1sm"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20rie"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3i4r"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pejdp"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6qgv"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfajv"]
+atlas = ExtResource("1_pqglw")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fro10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dkds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6sut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft1sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20rie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3i4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pejdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6qgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfajv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bushes" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fro10")
+autoplay = "default"

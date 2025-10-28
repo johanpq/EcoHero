@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlth6r7kr30ve"]
+[gd_scene load_steps=5 format=3 uid="uid://dlth6r7kr30ve"]
 
 [ext_resource type="PackedScene" uid="uid://chrkpvc28a6g3" path="res://Scenario/scenario_level_1.tscn" id="1_l3qga"]
 [ext_resource type="PackedScene" uid="uid://c5xviqa6tjxo8" path="res://character/character.tscn" id="2_5ylps"]
+[ext_resource type="PackedScene" uid="uid://cydtjy474h63f" path="res://trees/trees_1.tscn" id="3_5ylps"]
+[ext_resource type="PackedScene" uid="uid://b0ewkfwtbtf2t" path="res://bushes/bushes.tscn" id="4_vjd1c"]
 
 [node name="level1" type="Node2D"]
 
@@ -9,4 +11,17 @@
 
 [node name="Character" parent="." instance=ExtResource("2_5ylps")]
 position = Vector2(106, 92)
+scale = Vector2(0.5, 0.5)
+
+[node name="Trees-1" parent="." instance=ExtResource("3_5ylps")]
+position = Vector2(14, -8)
+
+[node name="Trees-2" parent="." instance=ExtResource("3_5ylps")]
+position = Vector2(13, 20)
+
+[node name="Trees-3" parent="." instance=ExtResource("3_5ylps")]
+position = Vector2(28, 169)
+
+[node name="bushes" parent="." instance=ExtResource("4_vjd1c")]
+position = Vector2(27, 200)
 scale = Vector2(0.5, 0.5)
