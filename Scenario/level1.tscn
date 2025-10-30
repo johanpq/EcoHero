@@ -16,21 +16,102 @@ scale = Vector2(0.5, 0.5)
 [node name="Trees-1" parent="." instance=ExtResource("3_5ylps")]
 position = Vector2(14, -8)
 
-[node name="Trees-2" parent="." instance=ExtResource("3_5ylps")]
-position = Vector2(13, 20)
+[node name="Trees-2" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(-5, 140)
+scale = Vector2(1, 1)
 
-[node name="Trees-3" parent="." instance=ExtResource("3_5ylps")]
-position = Vector2(131, 176)
+[node name="Trees-3" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(590, 985)
+scale = Vector2(1, 1)
+
+[node name="Trees-4" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(130, 1060)
+scale = Vector2(1, 1)
+
+[node name="Trees-5" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(410, 1060)
+scale = Vector2(1, 1)
+
+[node name="Trees-6" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(715, 915)
+scale = Vector2(1, 1)
+
+[node name="Trees-7" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(845, 985)
+scale = Vector2(1, 1)
+
+[node name="Trees-8" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1390, 1240)
+scale = Vector2(1, 1)
+
+[node name="Trees-9" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1370, 880)
+scale = Vector2(1, 1)
+
+[node name="Trees-10" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(2105, 1355)
+scale = Vector2(1, 1)
+
+[node name="Trees-11" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(2370, 1145)
+scale = Vector2(1, 1)
+
+[node name="Trees-12" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(2130, 1000)
+scale = Vector2(1, 1)
+
+[node name="Trees-13" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1545, 715)
+scale = Vector2(1, 1)
+
+[node name="Trees-14" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1835, 795)
+scale = Vector2(1, 1)
+
+[node name="Trees-15" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1665, 430)
+scale = Vector2(1, 1)
+
+[node name="Trees-16" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(2050, 400)
+scale = Vector2(1, 1)
+
+[node name="Trees-17" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(2165, 100)
+scale = Vector2(1, 1)
+
+[node name="Trees-18" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1735, 105)
+scale = Vector2(1, 1)
+
+[node name="Trees-19" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1240, 115)
+scale = Vector2(1, 1)
+
+[node name="Trees-20" parent="Trees-1" instance=ExtResource("3_5ylps")]
+position = Vector2(1310, 410)
+scale = Vector2(1, 1)
 
 [node name="bushes" parent="." instance=ExtResource("4_vjd1c")]
-position = Vector2(99, 214)
+position = Vector2(131, 249)
 scale = Vector2(0.5, 0.5)
 
-[node name="Trees-4" parent="." instance=ExtResource("3_5ylps")]
-position = Vector2(27, 192)
+[node name="bushes2" parent="bushes" instance=ExtResource("4_vjd1c")]
+position = Vector2(426, -118)
+scale = Vector2(1, 1)
 
-[node name="Trees-5" parent="." instance=ExtResource("3_5ylps")]
-position = Vector2(27, 213)
+[node name="bushes3" parent="bushes" instance=ExtResource("4_vjd1c")]
+position = Vector2(476, -338)
+scale = Vector2(1, 1)
 
-[node name="Trees-6" parent="." instance=ExtResource("3_5ylps")]
-position = Vector2(87, 175)
+[node name="bushes4" parent="bushes" instance=ExtResource("4_vjd1c")]
+position = Vector2(572, -25.9999)
+scale = Vector2(1, 1)
+
+[node name="bushes5" parent="bushes" instance=ExtResource("4_vjd1c")]
+position = Vector2(226, -78)
+scale = Vector2(1, 1)
+
+[node name="bushes6" parent="bushes" instance=ExtResource("4_vjd1c")]
+position = Vector2(118, -45.9999)
+scale = Vector2(1, 1)
