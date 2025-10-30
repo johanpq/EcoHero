@@ -663,10 +663,11 @@ wait_time = 0.7
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-30, -39)
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
-limit_right = 510
-limit_bottom = 320
+limit_right = 500
+limit_bottom = 310
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
