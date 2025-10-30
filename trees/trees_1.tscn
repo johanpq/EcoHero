@@ -1,6 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cydtjy474h63f"]
+[gd_scene load_steps=14 format=3 uid="uid://cydtjy474h63f"]
 
+[ext_resource type="Script" uid="uid://b46ordr65s44g" path="res://TransparentObjects/object.gd" id="1_7je8e"]
 [ext_resource type="Texture2D" uid="uid://chx027s70xxyi" path="res://Tiny Swords (Free Pack)/Decorations/Trees/Tree1.png" id="1_yxhqb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxhqb"]
+size = Vector2(52.3438, 32.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7je8e"]
 atlas = ExtResource("1_yxhqb")
@@ -66,22 +70,33 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxhqb"]
-size = Vector2(52.3438, 32.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1jw8"]
+size = Vector2(50, 70)
 
 [node name="Trees-1" type="Node2D"]
 y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
+script = ExtResource("1_7je8e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
-sprite_frames = SubResource("SpriteFrames_7x4x8")
-autoplay = "default"
-frame = 1
-frame_progress = 0.649021
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 95)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_yxhqb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7x4x8")
+autoplay = "default"
+frame = 1
+frame_progress = 0.649021
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_t1jw8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
