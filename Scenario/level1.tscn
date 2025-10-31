@@ -98,20 +98,15 @@ scale = Vector2(0.5, 0.5)
 
 [node name="bushes2" parent="bushes" instance=ExtResource("4_vjd1c")]
 position = Vector2(426, -118)
-scale = Vector2(1, 1)
 
 [node name="bushes3" parent="bushes" instance=ExtResource("4_vjd1c")]
 position = Vector2(476, -338)
-scale = Vector2(1, 1)
 
 [node name="bushes4" parent="bushes" instance=ExtResource("4_vjd1c")]
 position = Vector2(572, -25.9999)
-scale = Vector2(1, 1)
 
 [node name="bushes5" parent="bushes" instance=ExtResource("4_vjd1c")]
 position = Vector2(226, -78)
-scale = Vector2(1, 1)
 
 [node name="bushes6" parent="bushes" instance=ExtResource("4_vjd1c")]
 position = Vector2(118, -45.9999)
-scale = Vector2(1, 1)

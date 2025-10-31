@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://by4v71g8b76i3"]
+
+[ext_resource type="Script" uid="uid://b46ordr65s44g" path="res://TransparentObjects/object.gd" id="1_7sscy"]
+[ext_resource type="Texture2D" uid="uid://dossqhwwkr280" path="res://Tiny Swords (Free Pack)/Buildings/Black Buildings/Tower.png" id="1_os3bn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os3bn"]
+size = Vector2(45, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sscy"]
+size = Vector2(41, 20)
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_7sscy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_os3bn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_os3bn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 36)
+shape = SubResource("RectangleShape2D_7sscy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://wh5a7fqrpdwe"]
+
+[ext_resource type="Script" uid="uid://b46ordr65s44g" path="res://TransparentObjects/object.gd" id="1_a8jkm"]
+[ext_resource type="Texture2D" uid="uid://b36vqqpagsewx" path="res://Tiny Swords (Free Pack)/Buildings/Yellow Buildings/House1.png" id="1_f6877"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8jkm"]
+size = Vector2(36, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owi2m"]
+size = Vector2(39, 18)
+
+[node name="yellow-house" type="Node2D"]
+script = ExtResource("1_a8jkm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_f6877")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_a8jkm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 24)
+shape = SubResource("RectangleShape2D_owi2m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
