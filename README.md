@@ -37,24 +37,9 @@ O diagrama de casos de uso apresenta as principais funcionalidades disponíveis 
 
 ## Requisitos
 
-**Funcionais:**
+- Você pode acessar o documento completo aqui:
 
-- O jogador pode se mover em 8 direções.
-- O jogador pode controlar o personagem usando as teclas de movimentação devem seguir o padrão WASD ou as setas direcionais.
-- O jogador e NPCs devem ter animações.
-- O jogo deve ter NPCs.
-- O jogador interage com NPC 's.
-- O jogo deve registrar colisões entre objetos.
-- O jogo deve permitir que itens sejam coletáveis.
-- O jogo deve exibir mensagens ou ícones de interação quando o personagem entra em uma área de ação.
-- O jogo deve ter diversos cenários.
-- O jogo deve ter mobs para serem derrotados.
-
-**Não funcionais:**
-
-- Estilo visual: O jogo deve adotar uma estética pixel art.
-- Balanceamento: O jogo deve manter uma curva de dificuldade progressiva, evitando que o jogador enfrente inimigos impossíveis logo no início.
-- Trilha sonora e efeitos: O jogo deve possuir música ambiente e efeitos sonoros para ações principais (coletar item, atacar, interagir).
+- [Abrir Requesitos (PDF)](./REQUISITOS.pdf)
 
 ## Plano de teste
 
