@@ -158,5 +158,5 @@ func _process(_delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("mural_quests"):
 		toggle_dialogue()
 		
-	if player_in_area and Input.is_action_just_pressed("next_level"):
+	if player_in_area and Input.is_action_just_pressed("next_level") and "Utah" in GlobalVariables.quest_completed:
 		next_level()

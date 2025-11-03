@@ -223,11 +223,11 @@ animations = [{
 [node name="Water" parent="." instance=ExtResource("1_iwm72")]
 
 [node name="Character" parent="." instance=ExtResource("4_1eo50")]
-position = Vector2(61, 111)
+position = Vector2(87, 114)
 scale = Vector2(0.5, 0.5)
 
 [node name="Npcs" parent="." instance=ExtResource("2_blswb")]
-position = Vector2(150, 143)
+position = Vector2(-58, 86)
 scale = Vector2(0.44, 0.44)
 dialogues = Array[String](["Temos lixos em volta", "Explore a area e remova os lixos"])
 sprite_frames = SubResource("SpriteFrames_obhoj")
@@ -246,15 +246,22 @@ has_dialog = true
 
 [node name="Warming" parent="." instance=ExtResource("6_0rbo8")]
 position = Vector2(-34, 57)
-dialog = Array[String](["Bem-vindo, jovem herói! Antes de salvar a vila, você precisa aprender a se mover, atacar e organizar seus recursos.", "Cada pedaço de lixo que você recolhe pode salvar vidas — ou criar monstros!”", "Tutorial!", "Use W, A, S, D para andar pelo cenário.", "Use P, para atacar.", "Use \"inventario\" para ver seus recursos."])
+dialog = Array[String](["Bem-vindo, jovem herói! Antes de salvar a vila, você precisa aprender a se mover, atacar e organizar seus recursos.", "Cada pedaço de lixo que você recolhe pode salvar vidas — ou criar monstros!”", "Tutorial!", "Use W, A, S, D ou as teclas direcionais para andar pelo cenário.", "Use P, para atacar."])
 
 [node name="Warming2" parent="." instance=ExtResource("6_0rbo8")]
 position = Vector2(-82, 99)
 dialog = Array[String](["Nos tempos antigos, nossa vila prosperava em harmonia com a natureza.", "Mas, com o tempo, o acúmulo de lixo começou a aparecer nos bosques.", " Dizem que se não for recolhido, o lixo pode ganhar vida e se tornar uma ameaça", "O que parecia ser apenas sujeira agora se move e ataca!", "Cada pedaço de lixo ignorado se transforma em criaturas perigosas, que vagam pelas ruas e florestas. ", "A vila clama por um herói que possa impedir que a sujeira domine tudo."])
 
 [node name="Warming3" parent="." instance=ExtResource("6_0rbo8")]
+visible = false
 position = Vector2(81, 32)
 dialog = Array[String](["Excelente trabalho, herói! Você já sabe se mover, atacar e organizar seu lixo.", "A vila conta com você para enfrentar o verdadeiro perigo que se aproxima.Siga em frente e se prepare para um novo desáfio."])
+
+[node name="Items" parent="." instance=ExtResource("15_b1tl3")]
+position = Vector2(310, 142)
+
+[node name="Items2" parent="." instance=ExtResource("15_b1tl3")]
+position = Vector2(347, -13)
 
 [node name="Trees-1" parent="." instance=ExtResource("7_1eo50")]
 position = Vector2(32, 180)
@@ -294,9 +301,6 @@ scale = Vector2(1, 1)
 [node name="Trees-10" parent="Trees-1" instance=ExtResource("7_1eo50")]
 position = Vector2(1710, 150)
 scale = Vector2(1, 1)
-
-[node name="Items" parent="." instance=ExtResource("15_b1tl3")]
-position = Vector2(73, 107)
 
 [node name="Castle" parent="." instance=ExtResource("17_ckxih")]
 position = Vector2(68, 64)

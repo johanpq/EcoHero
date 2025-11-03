@@ -33,6 +33,7 @@ func toogleModal():
 	painel.visible = not painel.visible
 	if painel.visible:
 		start_dialog()
+		GlobalVariables.quest_open = true
 	else:
 		is_typing = false
 		current_text = ""
@@ -40,6 +41,7 @@ func toogleModal():
 		text_index = 0
 		text.text = ""
 		title.text = ""
+		GlobalVariables.quest_open = false
 
 func start_dialog():
 	if dialog.size() == 0:
@@ -92,7 +94,7 @@ func _process(delta: float) -> void:
 			timer = 0.0
 			if current_text.length() < full_text.length():
 				current_text += full_text[current_text.length()]
-				title.text = "Info"
+				title.text = ""
 				text.text = current_text
 			else:
 				is_typing = false
