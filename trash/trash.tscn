@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://cicvfpmq5ime2"]
+[gd_scene load_steps=9 format=4 uid="uid://cicvfpmq5ime2"]
 
 [ext_resource type="Script" uid="uid://bvolp5rut4seb" path="res://trash/script/items.gd" id="1_t4tb0"]
 [ext_resource type="Script" uid="uid://33qix4lv4bth" path="res://trash/script/item.gd" id="2_sxnej"]
 [ext_resource type="Texture2D" uid="uid://r7gqfmk27gou" path="res://enemies/assets/Imagens PNG Servolo (1).png" id="4_g8i66"]
+[ext_resource type="Texture2D" uid="uid://bf83pjysdddx4" path="res://enemies/assets/Lixo-1.png" id="4_is7oy"]
 [ext_resource type="PackedScene" uid="uid://5ypvcel7aw54" path="res://KeyboardLabel/Label_keyboard.tscn" id="4_lvia1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_is7oy"]
@@ -855,6 +856,7 @@ tile_set = SubResource("TileSet_yji33")
 
 [node name="TrashTexture" type="Sprite2D" parent="item"]
 position = Vector2(49, 32)
+texture = ExtResource("4_is7oy")
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Area2D" type="Area2D" parent="item"]
@@ -867,6 +869,7 @@ shape = SubResource("RectangleShape2D_buahv")
 [node name="LabelKeyboard" parent="item/Area2D" instance=ExtResource("4_lvia1")]
 visible = true
 position = Vector2(34, 17)
+scale = Vector2(1.5, 1.5)
 
 [connection signal="body_entered" from="item/Area2D" to="." method="in_area"]
 [connection signal="body_exited" from="item/Area2D" to="." method="out_area"]

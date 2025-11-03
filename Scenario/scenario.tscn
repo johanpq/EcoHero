@@ -258,10 +258,19 @@ position = Vector2(81, 32)
 dialog = Array[String](["Excelente trabalho, herói! Você já sabe se mover, atacar e organizar seu lixo.", "A vila conta com você para enfrentar o verdadeiro perigo que se aproxima.Siga em frente e se prepare para um novo desáfio."])
 
 [node name="Items" parent="." instance=ExtResource("15_b1tl3")]
-position = Vector2(310, 142)
+position = Vector2(330, 194)
+scale = Vector2(0.25, 0.25)
 
 [node name="Items2" parent="." instance=ExtResource("15_b1tl3")]
-position = Vector2(347, -13)
+position = Vector2(370, 30)
+scale = Vector2(0.25, 0.25)
+
+[node name="Items3" parent="." instance=ExtResource("15_b1tl3")]
+position = Vector2(28, 1)
+
+[node name="Items4" parent="." instance=ExtResource("15_b1tl3")]
+position = Vector2(126, 114)
+scale = Vector2(0.25, 0.25)
 
 [node name="Trees-1" parent="." instance=ExtResource("7_1eo50")]
 position = Vector2(32, 180)
