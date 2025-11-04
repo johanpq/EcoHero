@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cicvfpmq5ime2"]
+[gd_scene load_steps=10 format=4 uid="uid://cicvfpmq5ime2"]
 
 [ext_resource type="Script" uid="uid://bvolp5rut4seb" path="res://trash/script/items.gd" id="1_t4tb0"]
 [ext_resource type="Script" uid="uid://33qix4lv4bth" path="res://trash/script/item.gd" id="2_sxnej"]
@@ -841,6 +841,9 @@ sources/0 = SubResource("TileSetAtlasSource_is7oy")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buahv"]
 size = Vector2(30, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is7oy"]
+size = Vector2(17, 11)
+
 [node name="Items" type="Node2D"]
 script = ExtResource("1_t4tb0")
 
@@ -870,6 +873,12 @@ shape = SubResource("RectangleShape2D_buahv")
 visible = true
 position = Vector2(34, 17)
 scale = Vector2(1.5, 1.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="item"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item/StaticBody2D"]
+position = Vector2(50, 37)
+shape = SubResource("RectangleShape2D_is7oy")
 
 [connection signal="body_entered" from="item/Area2D" to="." method="in_area"]
 [connection signal="body_exited" from="item/Area2D" to="." method="out_area"]

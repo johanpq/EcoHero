@@ -4,17 +4,25 @@ class_name Items  # nome da classe
 @onready var Item : Item = $item
 @onready var Label_hint: Label = $item/Area2D/LabelKeyboard/Label
 var player_inside = false
+var ready_finished = false
 	
 func _ready():
 	Item.addItem()
 	Label_hint.visible = false
+	
+	await get_tree().create_timer(0.2).timeout
+	ready_finished = true
 
 func in_area(_body: Node) -> void:
+	if not ready_finished:
+		return
 	player_inside = true
 	Label_hint.text = "F"
 	Label_hint.visible = true
 
 func out_area(_body: Node) -> void:
+	if not ready_finished:
+		return
 	player_inside = false
 	Label_hint.visible = false
 
