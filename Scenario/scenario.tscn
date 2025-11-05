@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bfl0bwcxhfrci"]
+[gd_scene load_steps=47 format=3 uid="uid://bfl0bwcxhfrci"]
 
 [ext_resource type="PackedScene" uid="uid://d0825uxp8afud" path="res://titlemap-home/tile_map_layer.tscn" id="1_iwm72"]
 [ext_resource type="PackedScene" uid="uid://k00yvrjm63ux" path="res://npc/npc.tscn" id="2_blswb"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bcxeu8j6lucv1" path="res://TransparentObjects/blue_house.tscn" id="17_l3pbu"]
 [ext_resource type="PackedScene" uid="uid://ceh77glfswbwc" path="res://TransparentObjects/black_house.tscn" id="17_obhoj"]
 [ext_resource type="PackedScene" uid="uid://lmbc6530j6g7" path="res://TransparentObjects/red_house.tscn" id="17_x12u1"]
+[ext_resource type="PackedScene" uid="uid://cwq7bne1yutco" path="res://tutorial/tutorial.tscn" id="18_ckxih"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsc1k"]
 atlas = ExtResource("3_iwm72")
@@ -372,3 +373,6 @@ scale = Vector2(0.5, 0.5)
 [node name="red-house" parent="." instance=ExtResource("17_x12u1")]
 position = Vector2(360, 147)
 scale = Vector2(0.5, 0.5)
+
+[node name="Tutorial" parent="." instance=ExtResource("18_ckxih")]
+dialogues = Array[String](["Bem-vindo ao EcoHero (Pressione \"i\" para continuar)", ""])
