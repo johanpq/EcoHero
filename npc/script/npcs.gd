@@ -20,6 +20,9 @@ var is_typing := false
 
 @export var labelKeyboard: Node2D
 @export var mural_npc: PanelContainer
+@export var mural_quest: PanelContainer
+@export var title_quest: RichTextLabel
+@export var text_quest: RichTextLabel
 @export var name_npc: String
 @export var required_npc: String
 @export var next_npc: String
@@ -27,6 +30,7 @@ var is_typing := false
 @export var text_mural: RichTextLabel
 @export var next_scenario: String
 @export var has_dialog: bool
+
 
 var player_in_area = false
 var dialogue_index: int = 0
@@ -49,6 +53,11 @@ func _ready() -> void:
 
 	if mural_npc:
 		mural_npc.visible = false
+	
+	GlobalVariables.item_coletado.connect(_on_item_coletado)
+		
+	if mural_quest:
+		mural_quest.visible = false
 
 # Abre/fecha o painel de diálogo
 func toggle_dialogue():
@@ -86,8 +95,13 @@ func toggle_dialogue():
 		dialogue_open = true
 		GlobalVariables.quest_open = true
 		mural_npc.visible = true
-
-	# 4) Navegar no diálogo normal
+		GlobalVariables.is_the_quest_open_npc = true
+		
+		if GlobalVariables.is_the_quest_open_npc:
+			mural_quest.visible = true
+			title_quest.text = "Quest"
+			var qtd_inicial = get_tree().get_nodes_in_group("items").size()
+			text_quest.text = "Lixos: " + str(qtd_inicial)
 	else:
 		if not completed_quest and not _blocked_message_shown:
 			_next_dialogue()
@@ -160,3 +174,20 @@ func _process(_delta: float) -> void:
 		
 	if player_in_area and Input.is_action_just_pressed("next_level") and "Utah" in GlobalVariables.quest_completed:
 		next_level()
+	
+	if mural_quest and mural_quest.visible and "Utah" in GlobalVariables.quest_completed:
+		if Input.is_action_just_pressed("mural_quests"):
+			mural_quest.visible = false
+
+# Função chamada pelo Sinal Global quando um item é pego
+func _on_item_coletado(itens_restantes: int) -> void:
+	if mural_quest and GlobalVariables.is_the_quest_open_npc:
+		
+		mural_quest.visible = true 
+		
+		# Atualiza o texto de status
+		text_quest.text = "Lixos: " + str(itens_restantes)
+		
+		if itens_restantes == 0:
+			title_quest.text = "Quest CONCLUÍDA!"
+			text_quest.text = "Procure o proximo NPC (I para fechar)"

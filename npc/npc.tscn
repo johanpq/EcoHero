@@ -26,10 +26,13 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 3
 
-[node name="Npcs" type="Node2D" node_paths=PackedStringArray("labelKeyboard", "mural_npc", "title_mural", "text_mural")]
+[node name="Npcs" type="Node2D" node_paths=PackedStringArray("labelKeyboard", "mural_npc", "mural_quest", "title_quest", "text_quest", "title_mural", "text_mural")]
 script = ExtResource("1_66myh")
 labelKeyboard = NodePath("Npc/Area2D/LabelKeyboard")
 mural_npc = NodePath("Npc/Area2D/CanvasLayer/Mural")
+mural_quest = NodePath("Npc/Area2D/CanvasLayerQuest/Mural")
+title_quest = NodePath("Npc/Area2D/CanvasLayerQuest/Mural/Title")
+text_quest = NodePath("Npc/Area2D/CanvasLayerQuest/Mural/Text")
 name_npc = "Utah"
 title_mural = NodePath("Npc/Area2D/CanvasLayer/Mural/Title")
 text_mural = NodePath("Npc/Area2D/CanvasLayer/Mural/Text")
@@ -77,6 +80,30 @@ theme_override_font_sizes/normal_font_size = 7
 text = "tseste"
 
 [node name="Text" type="RichTextLabel" parent="Npc/Area2D/CanvasLayer/Mural"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 5
+text = "default"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayerQuest" type="CanvasLayer" parent="Npc/Area2D"]
+
+[node name="Mural" type="PanelContainer" parent="Npc/Area2D/CanvasLayerQuest"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_bottom = 43.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nhy3c")
+
+[node name="Title" type="RichTextLabel" parent="Npc/Area2D/CanvasLayerQuest/Mural"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 7
+text = "tseste"
+
+[node name="Text" type="RichTextLabel" parent="Npc/Area2D/CanvasLayerQuest/Mural"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 5
 text = "default"
