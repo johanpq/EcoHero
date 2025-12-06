@@ -1,7 +1,7 @@
 extends Node2D
 class_name Npc
 
-# Lista de falas exportadas — dá pra editar no Inspector
+# Lista de falas exportadas
 @export var dialogues: Array[String] = [
 	"Olá, aventureiro!",
 	"Preciso que você colete o lixo da vila.",
@@ -191,3 +191,4 @@ func _on_item_coletado(itens_restantes: int) -> void:
 		if itens_restantes == 0:
 			title_quest.text = "Quest CONCLUÍDA!"
 			text_quest.text = "Procure o proximo NPC (I para fechar)"
+			#GlobalVariables.is_the_quest_open_npc = false

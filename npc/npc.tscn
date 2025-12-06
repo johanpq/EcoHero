@@ -93,15 +93,17 @@ visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -77.0
-offset_bottom = 43.0
+offset_left = -80.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 47.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nhy3c")
 
 [node name="Title" type="RichTextLabel" parent="Npc/Area2D/CanvasLayerQuest/Mural"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 7
-text = "tseste"
+text = "Quest"
 
 [node name="Text" type="RichTextLabel" parent="Npc/Area2D/CanvasLayerQuest/Mural"]
 layout_mode = 2

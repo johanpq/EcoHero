@@ -28,6 +28,7 @@ func _show_current_dialogue():
 		text.text = ""
 		is_typing = true
 		typing_timer = 0.0
+		GlobalVariables.quest_open = true
 	else:
 		mural.visible = false
 
@@ -51,6 +52,7 @@ func _process(delta: float) -> void:
 				text.text = current_text
 			else:
 				is_typing = false
+				GlobalVariables.quest_open = false
 			
 	if Input.is_action_just_pressed("mural_quests"):
 		_next_dialogue()
