@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwq7bne1yutco"]
+
+[ext_resource type="Script" uid="uid://dqebbs3bmy1ta" path="res://tutorial/tutorial.gd" id="1_kcami"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_kcami")
+
+[node name="Warning" type="Node2D" parent="."]
+position = Vector2(-86, 65)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Warning"]
+
+[node name="Mural" type="PanelContainer" parent="Warning/CanvasLayer"]
+offset_right = 77.0
+offset_bottom = 43.0
+
+[node name="Title" type="RichTextLabel" parent="Warning/CanvasLayer/Mural"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 9
+
+[node name="Text" type="RichTextLabel" parent="Warning/CanvasLayer/Mural"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 6
+horizontal_alignment = 1
+vertical_alignment = 1

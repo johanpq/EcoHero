@@ -29,6 +29,13 @@ func out_area(_body: Node) -> void:
 func _physics_process(_delta: float) -> void:
 	if player_inside and Input.is_action_just_pressed("get_item"):
 		Item.removeItem()
-		var qtd = get_tree().get_nodes_in_group("items").size()
-		if qtd == 1 and "Utah" not in GlobalVariables.quest_completed:
+		
+		var total_no_grupo = get_tree().get_nodes_in_group("items").size()
+		var qtd = total_no_grupo - 1
+		
+		if GlobalVariables.is_the_quest_open_npc:
+			GlobalVariables.item_coletado.emit(qtd) 
+			print("Quantidade restante: " + str(qtd)) 
+			
+		if qtd == 0 and "Utah" not in GlobalVariables.quest_completed:
 			GlobalVariables.quest_completed.append("Utah")
