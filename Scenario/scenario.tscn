@@ -237,7 +237,7 @@ next_npc = "Telp"
 has_dialog = true
 
 [node name="Npcs2" parent="." instance=ExtResource("2_blswb")]
-position = Vector2(321, 183)
+position = Vector2(322, 183)
 scale = Vector2(0.44, 0.44)
 dialogues = Array[String](["Deseja ir para a proxima fase?", "Clique em enter"])
 sprite_frames = SubResource("SpriteFrames_vr4ks")

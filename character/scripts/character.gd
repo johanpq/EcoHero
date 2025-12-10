@@ -11,6 +11,7 @@ class_name PlayerCharacter  # nome da classe
 @export var animation_tree: AnimationTree
 
 # --- Variáveis internas ---
+var is_deadd: bool = false
 var state_machine
 var is_attack: bool = false
 
@@ -19,12 +20,17 @@ func _ready() -> void:
 	if animation_tree == null:
 		animation_tree = $AnimationTree
 	
+	animation_tree.active = true
+	
 	if animation_tree:
 		state_machine = animation_tree.get("parameters/playback")
 	else:
 		push_error("AnimationTree não encontrado!")
 
 func _physics_process(_delta: float) -> void:
+	if is_deadd: 
+		return
+		
 	_move(_delta)
 	_attack()
 	_animate()
@@ -78,3 +84,13 @@ func _animate() -> void:
 func _on_attack_timer_timeout() -> void:
 	#set_physics_process(true)
 	is_attack = false
+
+func _on_attack_area_body_entered(_body: Node2D) -> void:
+	if _body.is_in_group("enemy"):
+		_body.update_health()
+
+func die() -> void:
+	is_deadd = true
+	state_machine.travel("death")
+	await get_tree().create_timer(1.0).timeout
+	get_tree().reload_current_scene()

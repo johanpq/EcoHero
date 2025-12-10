@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://k00yvrjm63ux"]
+[gd_scene load_steps=8 format=3 uid="uid://k00yvrjm63ux"]
 
 [ext_resource type="Script" uid="uid://d28bxv4mt727f" path="res://npc/script/npcs.gd" id="1_66myh"]
 [ext_resource type="PackedScene" uid="uid://5ypvcel7aw54" path="res://KeyboardLabel/Label_keyboard.tscn" id="4_ldo70"]
@@ -26,7 +26,10 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 3
 
-[node name="Npcs" type="Node2D" node_paths=PackedStringArray("labelKeyboard", "mural_npc", "mural_quest", "title_quest", "text_quest", "title_mural", "text_mural")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhy3c"]
+radius = 53.009434
+
+[node name="Npcs" type="Node2D" node_paths=PackedStringArray("labelKeyboard", "mural_npc", "mural_quest", "title_quest", "text_quest", "title_mural", "text_mural") groups=["npc"]]
 script = ExtResource("1_66myh")
 labelKeyboard = NodePath("Npc/Area2D/LabelKeyboard")
 mural_npc = NodePath("Npc/Area2D/CanvasLayer/Mural")
@@ -111,6 +114,12 @@ theme_override_font_sizes/normal_font_size = 5
 text = "default"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(237, 40)
+shape = SubResource("CircleShape2D_nhy3c")
 
 [connection signal="body_entered" from="Npc/Area2D" to="." method="in_area"]
 [connection signal="body_exited" from="Npc/Area2D" to="." method="out_area"]
