@@ -41,6 +41,7 @@ title_mural = NodePath("Npc/Area2D/CanvasLayer/Mural/Title")
 text_mural = NodePath("Npc/Area2D/CanvasLayer/Mural/Text")
 
 [node name="LabelKeyboard" parent="." instance=ExtResource("4_ldo70")]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-3, 27)
@@ -66,8 +67,8 @@ position = Vector2(237, 40)
 shape = SubResource("RectangleShape2D_66myh")
 
 [node name="LabelKeyboard" parent="Npc/Area2D" instance=ExtResource("4_ldo70")]
-visible = true
-position = Vector2(225, 25)
+position = Vector2(235, 7)
+scale = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Npc/Area2D"]
 

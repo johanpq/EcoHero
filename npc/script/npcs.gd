@@ -48,7 +48,9 @@ func _ready() -> void:
 		if sprite_frames.has_animation(animation_name):
 			sprite.play(animation_name)
 
-	if labelKeyboard:
+	if labelKeyboard and has_dialog:
+		labelKeyboard.visible = true
+	else:
 		labelKeyboard.visible = false
 
 	if mural_npc:
@@ -92,6 +94,8 @@ func toggle_dialogue():
 			dialogue_index = 0
 			_show_current_dialogue()
 
+		
+		
 		dialogue_open = true
 		GlobalVariables.quest_open = true
 		mural_npc.visible = true
@@ -147,13 +151,24 @@ func close_label_keyboard():
 func in_area(_body: Node2D) -> void:
 	if has_dialog:
 		player_in_area = true
-		open_label_keyboard("i")
+		open_label_keyboard("E")
+		
+	if name_npc == "Loa" and _body.is_in_group("Gork"):
+		player_in_area = true
+		open_label_keyboard("E")
+	elif name_npc == "Loa" and not !_body.is_in_group("Gork"):
+		player_in_area = false
+		close_label_keyboard()
 
 func out_area(_body: Node2D) -> void:
 	if has_dialog:		
 		player_in_area = false
 		close_label_keyboard()
 		_close_dialogue()
+	
+	if name_npc == "Loa" and not !_body.is_in_group("Gork"):
+		player_in_area = false
+		close_label_keyboard()
 
 func next_level():
 	get_tree().change_scene_to_file("res://Scenario/" + next_scenario + ".tscn")
@@ -175,6 +190,9 @@ func _process(_delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("next_level") and "Utah" in GlobalVariables.quest_completed:
 		next_level()
 	
+	if player_in_area and Input.is_action_just_pressed("mural_quests") and name_npc == "Loa":
+		GlobalVariables.quest_completed.append("Loa")
+	
 	if mural_quest and mural_quest.visible and "Utah" in GlobalVariables.quest_completed:
 		if Input.is_action_just_pressed("mural_quests"):
 			mural_quest.visible = false
@@ -190,5 +208,5 @@ func _on_item_coletado(itens_restantes: int) -> void:
 		
 		if itens_restantes == 0:
 			title_quest.text = "Quest CONCLUÍDA!"
-			text_quest.text = "Procure o proximo NPC (I para fechar)"
+			text_quest.text = "Procure o proximo NPC (E para fechar)"
 			#GlobalVariables.is_the_quest_open_npc = false

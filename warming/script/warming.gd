@@ -17,12 +17,12 @@ var timer := 0.0
 func _ready() -> void:
 	player_in_area = false
 	painel.visible = false
-	labelKeyboard.visible = false
+	labelKeyboard.visible = true
 
 func in_area(_body: Node2D) -> void:
 	player_in_area = true
 	labelKeyboard.visible = true
-	labelKeyboard.setKeyboard("i")
+	labelKeyboard.setKeyboard("E")
 
 func out_area(_body: Node2D) -> void:
 	player_in_area = false

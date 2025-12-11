@@ -204,7 +204,8 @@ tile_map_data = PackedByteArray(0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 12, 0, 0, 0)
 tile_set = SubResource("TileSet_niau1")
 
 [node name="LabelKeyboard" parent="Area2D" instance=ExtResource("3_niau1")]
-position = Vector2(109, 34)
+position = Vector2(124, 28)
+scale = Vector2(0.8, 0.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(125, 39)

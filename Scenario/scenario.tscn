@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bfl0bwcxhfrci"]
+[gd_scene load_steps=55 format=3 uid="uid://bfl0bwcxhfrci"]
 
 [ext_resource type="PackedScene" uid="uid://d0825uxp8afud" path="res://titlemap-home/tile_map_layer.tscn" id="1_iwm72"]
 [ext_resource type="PackedScene" uid="uid://k00yvrjm63ux" path="res://npc/npc.tscn" id="2_blswb"]
@@ -120,6 +120,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw7bi"]
+atlas = ExtResource("5_cfce6")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0of7u"]
+atlas = ExtResource("5_cfce6")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qafne"]
+atlas = ExtResource("5_cfce6")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxyoa"]
+atlas = ExtResource("5_cfce6")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0her"]
+atlas = ExtResource("5_cfce6")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rv0u"]
+atlas = ExtResource("5_cfce6")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5v23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw7bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0of7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qafne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxyoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0her")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rv0u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vr4ks"]
 atlas = ExtResource("16_ia8cj")
 region = Rect2(0, 0, 192, 192)
@@ -225,7 +275,7 @@ animations = [{
 [node name="Water" parent="." instance=ExtResource("1_iwm72")]
 
 [node name="Character" parent="." instance=ExtResource("4_1eo50")]
-position = Vector2(87, 114)
+position = Vector2(382, 193)
 scale = Vector2(0.5, 0.5)
 
 [node name="Npcs" parent="." instance=ExtResource("2_blswb")]
@@ -246,8 +296,18 @@ required_npc = "Utah"
 next_scenario = "level1"
 has_dialog = true
 
+[node name="Npcs3" parent="." instance=ExtResource("2_blswb")]
+visible = false
+position = Vector2(194, 160)
+scale = Vector2(0.44, 0.44)
+dialogues = Array[String](["Deseja ir para a proxima fase?", "Clique em enter"])
+sprite_frames = SubResource("SpriteFrames_g5v23")
+name_npc = "Telp"
+required_npc = "Utah"
+has_dialog = true
+
 [node name="Warming" parent="." instance=ExtResource("6_0rbo8")]
-position = Vector2(-34, 57)
+position = Vector2(-38, 61)
 dialog = Array[String](["Bem-vindo, jovem herói! Antes de salvar a vila, você precisa aprender a se mover, atacar e organizar seus recursos.", "Cada pedaço de lixo que você recolhe pode salvar vidas — ou criar monstros!”", "Tutorial!", "Use W, A, S, D ou as teclas direcionais para andar pelo cenário.", "Use P, para atacar."])
 
 [node name="Warming2" parent="." instance=ExtResource("6_0rbo8")]
@@ -337,6 +397,7 @@ sprite_frames = SubResource("SpriteFrames_c58qd")
 [node name="blue-archers2" parent="." instance=ExtResource("2_blswb")]
 position = Vector2(8, 72)
 scale = Vector2(0.44, 0.44)
+dialogues = Array[String]([])
 sprite_frames = SubResource("SpriteFrames_c58qd")
 
 [node name="blue-archers3" parent="." instance=ExtResource("2_blswb")]
@@ -357,6 +418,7 @@ sprite_frames = SubResource("SpriteFrames_c58qd")
 [node name="red-archers" parent="." instance=ExtResource("2_blswb")]
 position = Vector2(245, 186)
 scale = Vector2(0.44, 0.44)
+dialogues = Array[String]([])
 sprite_frames = SubResource("SpriteFrames_jw7bi")
 
 [node name="black-house" parent="." instance=ExtResource("17_obhoj")]
@@ -376,7 +438,7 @@ position = Vector2(360, 147)
 scale = Vector2(0.5, 0.5)
 
 [node name="Tutorial" parent="." instance=ExtResource("18_ckxih")]
-dialogues = Array[String](["Bem-vindo ao EcoHero (Pressione \"i\" para continuar)", ""])
+dialogues = Array[String](["Bem-vindo ao EcoHero (Pressione \"E\" para continuar)"])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_obhoj")

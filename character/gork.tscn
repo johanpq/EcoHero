@@ -186,7 +186,7 @@ radius = 66.189125
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7frlh"]
 size = Vector2(46, 54)
 
-[node name="Gork" type="CharacterBody2D" node_paths=PackedStringArray("_texture")]
+[node name="Gork" type="CharacterBody2D" node_paths=PackedStringArray("_texture") groups=["Gork"]]
 script = ExtResource("1_2hf3e")
 _texture = NodePath("Texture")
 
