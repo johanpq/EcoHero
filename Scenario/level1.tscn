@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlth6r7kr30ve"]
+[gd_scene load_steps=27 format=3 uid="uid://dlth6r7kr30ve"]
 
 [ext_resource type="PackedScene" uid="uid://chrkpvc28a6g3" path="res://Scenario/scenario_level_1.tscn" id="1_l3qga"]
 [ext_resource type="PackedScene" uid="uid://c5xviqa6tjxo8" path="res://character/character.tscn" id="2_5ylps"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bkek463ouk1lf" path="res://Tiny Swords (Free Pack)/Units/Red Units/Monk/Idle.png" id="6_0jr4v"]
 [ext_resource type="PackedScene" uid="uid://2pwbhelgrhi4" path="res://enemies/enemy.tscn" id="8_80eap"]
 [ext_resource type="PackedScene" uid="uid://ylnqf26suhs5" path="res://character/gork.tscn" id="9_4pxcm"]
+[ext_resource type="AudioStream" uid="uid://cvotccq6shkdp" path="res://medieval-ballad-387218.mp3" id="10_6eroq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80eap"]
 atlas = ExtResource("6_0jr4v")
@@ -129,13 +130,13 @@ animations = [{
 [node name="scenario-level1" parent="." instance=ExtResource("1_l3qga")]
 
 [node name="Character" parent="." instance=ExtResource("2_5ylps")]
-position = Vector2(427, 52)
+position = Vector2(138, 112)
 scale = Vector2(0.44, 0.44)
 
 [node name="Npcs" parent="." instance=ExtResource("5_oxvl1")]
 position = Vector2(-6, 59)
 scale = Vector2(0.44, 0.44)
-dialogues = Array[String](["Olá, aventureiro!", "Ainda bem que voce chegou!", "Preciso que voce procure o Gork e traga-o de volta", "Ele saiu faz um tempo e nao voltou", "Soube que tem muitos lixos se transformando em monstros", "Sobre o Gork", "É provável que esteja com bastante medo", "Então em alguns momentos, terá que empurra-lo para ir ou voltar o caminho", "Tome cuidado!"])
+dialogues = Array[String](["Olá, aventureiro!", "Ainda bem que você chegou!", "Preciso que você procure o Gork e leve-o até o Cavaleiro", "Ele saiu faz um tempo e não voltou", "Soube que tem muitos lixos se transformando em monstros", "Sobre o Gork", "É provável que esteja com bastante medo", "Então em alguns momentos, terá que empurrá-lo para ir ou voltar o caminho", "Tome cuidado!"])
 sprite_frames = SubResource("SpriteFrames_o6lpt")
 name_npc = "Pont"
 has_dialog = true
@@ -143,12 +144,12 @@ has_dialog = true
 [node name="Npcs2" parent="." instance=ExtResource("5_oxvl1")]
 position = Vector2(374, 20)
 scale = Vector2(0.44, 0.44)
-dialogues = Array[String](["Quest concluída!"])
+dialogues = Array[String](["Parabéns! Você trouxe o Gork!", "Estávamos atrás dele! Pois ele quem é o responsável por espalhar o lixo!", "Bom trabalho!", "Te vejo na próxima!"])
 sprite_frames = SubResource("SpriteFrames_8ojnw")
 name_npc = "Loa"
 
 [node name="Gork" parent="." instance=ExtResource("9_4pxcm")]
-position = Vector2(375, 48)
+position = Vector2(182, 30)
 scale = Vector2(0.19, 0.19)
 
 [node name="Trees-1" parent="." instance=ExtResource("3_5ylps")]
@@ -286,7 +287,7 @@ position = Vector2(155.99998, 204.99998)
 scale = Vector2(0.4, 0.4)
 
 [node name="Enemy5" parent="." instance=ExtResource("8_80eap")]
-position = Vector2(28.999998, 219.99998)
+position = Vector2(22.999998, 223.00002)
 scale = Vector2(0.4, 0.4)
 
 [node name="Enemy6" parent="." instance=ExtResource("8_80eap")]
@@ -296,3 +297,40 @@ scale = Vector2(0.4, 0.4)
 [node name="Enemy7" parent="." instance=ExtResource("8_80eap")]
 position = Vector2(225.99998, 199.99998)
 scale = Vector2(0.4, 0.4)
+
+[node name="Enemy8" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(42, 266)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy9" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(87, 282)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy10" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(240, 271)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy11" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(314, 65.000015)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy12" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(423, 122)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy13" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(415, 184)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy14" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(446, 234)
+scale = Vector2(0.4, 0.4)
+
+[node name="Enemy15" parent="." instance=ExtResource("8_80eap")]
+position = Vector2(283, 133)
+scale = Vector2(0.4, 0.4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_6eroq")
+volume_db = -10.495
+autoplay = true
