@@ -3,6 +3,7 @@
 ## Tópicos
 
 - [Definição do Projeto](#definição-do-projeto)
+- [Artigo](#artigo)
 - [Funcionalidades](#funcionalidades)
 - [Diagrama de Classes](#diagrama-de-classes)
 - [Requisitos](#requisitos)
