@@ -15,6 +15,12 @@
 
 O projeto consiste na criação de um jogo 2D single player, em visão top-down, voltado para crianças, com foco em conscientizar e incentivar o uso dos Objetivos de Desenvolvimento Sustentável (ODS). Será desenvolvido na engine **Godot**, utilizando **GDScript**, aproveitando sua leveza, praticidade e caráter open source. O objetivo é entregar um **MVP funcional e interativo** para o público infantil.
 
+## Artigo
+
+- Você pode acessar o documento completo aqui:
+
+- [Abrir artigo (PDF)](./Artigo_teste.pdf)
+
 ## Funcionalidades
 
 - **Tutorial:** Sistema de tutorial para o jogador possa aprender os comandos básicos do game.
